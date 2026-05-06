@@ -118,20 +118,18 @@ export default function SignUpPage() {
                     initial="hidden"
                     animate="visible"
                     variants={fadeUp}
-                    className={`flex items-center gap-3 px-4 py-3.5 rounded-xl text-sm font-medium transition-all duration-300 ${
-                      isActive
+                    className={`flex items-center gap-3 px-4 py-3.5 rounded-xl text-sm font-medium transition-all duration-300 ${isActive
                         ? "bg-white text-black"
                         : "bg-white/[0.06] text-white/40 hover:bg-white/[0.1] cursor-pointer"
-                    }`}
+                      }`}
                   >
                     <span
-                      className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 ${
-                        isActive
+                      className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 ${isActive
                           ? "bg-black text-white"
                           : isDone
                             ? "bg-violet-500 text-white"
                             : "bg-white/10 text-white/40"
-                      }`}
+                        }`}
                     >
                       {isDone ? "✓" : step.id}
                     </span>
@@ -408,4 +406,4 @@ export default function SignUpPage() {
       </div>
     </div>
   );
-}
+} 

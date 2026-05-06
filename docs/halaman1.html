@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#131313",
+                        "tertiary-container": "#edd4ff",
+                        "on-primary-container": "#006c71",
+                        "on-surface-variant": "#b9caca",
+                        "primary-fixed": "#63f7ff",
+                        "on-error": "#690005",
+                        "on-primary-fixed": "#002021",
+                        "on-tertiary-container": "#872fd5",
+                        "inverse-surface": "#e5e2e1",
+                        "tertiary": "#fff8fd",
+                        "on-secondary": "#4d2600",
+                        "surface-container-highest": "#353534",
+                        "on-primary": "#003739",
+                        "tertiary-fixed": "#f0dbff",
+                        "surface-dim": "#131313",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary-container": "#603100",
+                        "tertiary-fixed-dim": "#ddb7ff",
+                        "inverse-on-surface": "#313030",
+                        "on-tertiary": "#490080",
+                        "surface-tint": "#00dce5",
+                        "on-tertiary-fixed": "#2c0051",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#393939",
+                        "primary-container": "#00f5ff",
+                        "primary": "#e9feff",
+                        "surface-container": "#201f1f",
+                        "outline-variant": "#3a494a",
+                        "primary-fixed-dim": "#00dce5",
+                        "on-tertiary-fixed-variant": "#6900b3",
+                        "secondary": "#ffb77d",
+                        "error": "#ffb4ab",
+                        "error-container": "#93000a",
+                        "on-primary-fixed-variant": "#004f53",
+                        "secondary-container": "#fd8b00",
+                        "on-background": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "secondary-fixed": "#ffdcc3",
+                        "outline": "#849495",
+                        "secondary-fixed-dim": "#ffb77d",
+                        "surface-variant": "#353534",
+                        "on-surface": "#e5e2e1",
+                        "on-secondary-fixed": "#2f1500",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-primary": "#00696e",
+                        "background": "#131313"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "page-margin": "24px",
+                        "gutter": "16px",
+                        "card-padding": "20px",
+                        "element-gap": "12px",
+                        "section-gap": "32px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "metric-xl": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["34px", { "lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "metric-xl": ["28px", { "lineHeight": "34px", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(30, 30, 30, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glow-cyan {
+            box-shadow: 0 0 15px rgba(0, 245, 255, 0.15);
+        }
+
+        .active-day-glow {
+            box-shadow: 0 0 12px rgba(0, 245, 255, 0.4);
+        }
+
+        .inner-recessed {
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body-lg min-h-screen pb-32">
+    <nav
+        class="flex justify-between items-center px-6 py-4 w-full sticky top-0 z-50 bg-[#1E1E1E]/80 backdrop-blur-xl border-b border-white/10 shadow-[0_0_15px_rgba(0,245,255,0.15)]">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+                <img alt="Student Avatar" class="w-full h-full object-cover"
+                    data-alt="A close-up portrait of a young, stylish male student with a bright, focused expression. The image is captured in a high-tech university lab setting with soft cyan ambient lighting. The background is blurred with bokeh effects of digital screens and laboratory equipment. The aesthetic is modern and academic, utilizing a dark color palette with glowing light accents that match the app's cyberpunk-academic fusion style."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0o4RVYBcaaYCK5MpkqBqCLDW_GV7ctSwag50U0AX_CpNrWWYoNY5Mx3L97JYE7SuSJUGIpaSS8-fXuBdR4tAZwu-LCZBNuIx1dIksmPI9Icsl_AEVfnbLRua8GC94A29v4LTaQkd12cSUW0IA6FSCGQ1Rpay0c63qqbQz8EGYEd0E66RTL-qBXz5oZidODRwp50BiD0pn-UYhWeF_dh4Ss6WF_ttj5qTHqoB7JCXmVKK6s3fkH_Y01IwovM3Vud4_AnSYbXHKd3A" />
+            </div>
+            <span class="font-['Inter'] text-xl font-black text-[#00F5FF] tracking-tighter">Lumina</span>
+        </div>
+        <button
+            class="w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 active:scale-95 hover:bg-white/5">
+            <span class="material-symbols-outlined text-[#00F5FF]" data-icon="notifications">notifications</span>
+        </button>
+    </nav>
+    <main class="px-page-margin mt-gutter space-y-section-gap max-w-2xl mx-auto">
+        <header class="space-y-2">
+            <div class="flex justify-between items-end">
+                <div>
+                    <p class="text-body-sm text-outline font-body-sm">Selamat pagi,</p>
+                    <h1 class="text-display-lg font-display-lg text-primary">Hai, Alex! 👋</h1>
+                </div>
+                <div class="flex flex-col items-end">
+                    <span class="text-label-caps text-primary-container uppercase tracking-widest">Perform
+                        Belajar</span>
+                    <span class="text-metric-xl font-metric-xl text-[#00F5FF]">75%</span>
+                </div>
+            </div>
+        </header>
+        <section class="glass-card rounded-xl p-card-padding">
+            <div class="flex justify-between items-center mb-element-gap">
+                <h2 class="text-label-caps text-outline uppercase">Ringkasan Mingguan</h2>
+                <span class="text-body-sm text-primary-container">Minggu ke-12</span>
+            </div>
+            <div class="flex justify-between items-center">
+                <div class="flex flex-col items-center gap-2">
+                    <span class="text-label-caps text-outline">S</span>
+                    <div class="w-8 h-8 rounded-full flex items-center justify-center text-body-sm text-outline">18
+                    </div>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <span class="text-label-caps text-outline">S</span>
+                    <div class="w-8 h-8 rounded-full flex items-center justify-center text-body-sm text-outline">19
+                    </div>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <span class="text-label-caps text-primary-container">R</span>
+                    <div
+                        class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container font-bold flex items-center justify-center text-body-sm active-day-glow">
+                        20</div>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <span class="text-label-caps text-outline">K</span>
+                    <div class="w-8 h-8 rounded-full flex items-center justify-center text-body-sm text-outline">21
+                    </div>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <span class="text-label-caps text-outline">J</span>
+                    <div class="w-8 h-8 rounded-full flex items-center justify-center text-body-sm text-outline">22
+                    </div>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <span class="text-label-caps text-outline">S</span>
+                    <div class="w-8 h-8 rounded-full flex items-center justify-center text-body-sm text-outline">23
+                    </div>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <span class="text-label-caps text-outline">M</span>
+                    <div class="w-8 h-8 rounded-full flex items-center justify-center text-body-sm text-outline">24
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section
+            class="relative overflow-hidden glass-card rounded-xl p-card-padding bg-gradient-to-br from-[#1E1E1E] to-[#252525]">
+            <div class="absolute top-0 right-0 p-4">
+                <span class="material-symbols-outlined text-primary-container/20 text-6xl"
+                    data-icon="auto_awesome">auto_awesome</span>
+            </div>
+            <div class="relative z-10 space-y-4">
+                <div>
+                    <h2 class="text-headline-md font-headline-md text-primary">You're doing great!</h2>
+                    <p class="text-body-sm text-outline max-w-[70%]">Terus tingkatkan performamu untuk mempertahankan
+                        streak belajarmu.</p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full">
+                        <span class="material-symbols-outlined text-[#ffb77d] text-xl" data-icon="local_fire_department"
+                            style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+                        <span class="text-body-lg font-bold text-secondary">3 Hari Streak</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="glass-card rounded-xl p-card-padding">
+            <div class="flex justify-between items-start mb-6">
+                <div>
+                    <h2 class="text-label-caps text-outline uppercase mb-1">Performa Belajar</h2>
+                    <div class="flex items-baseline gap-2">
+                        <span class="text-metric-xl font-metric-xl text-primary">8.6</span>
+                        <span class="text-body-sm text-secondary">Medium</span>
+                    </div>
+                </div>
+                <div
+                    class="bg-secondary-container/20 text-secondary-container px-3 py-1 rounded-full flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+                    <span class="text-label-caps">+12%</span>
+                </div>
+            </div>
+            <div class="h-32 w-full flex items-end gap-2 px-2">
+                <div class="flex-1 bg-white/5 rounded-t-lg h-[40%] transition-all hover:bg-primary-container/20"></div>
+                <div class="flex-1 bg-white/5 rounded-t-lg h-[65%] transition-all hover:bg-primary-container/20"></div>
+                <div class="flex-1 bg-white/5 rounded-t-lg h-[50%] transition-all hover:bg-primary-container/20"></div>
+                <div class="flex-1 bg-white/5 rounded-t-lg h-[85%] transition-all hover:bg-primary-container/20"></div>
+                <div class="flex-1 bg-primary-container/40 rounded-t-lg h-[100%] active-day-glow transition-all"></div>
+                <div class="flex-1 bg-white/5 rounded-t-lg h-[60%] transition-all hover:bg-primary-container/20"></div>
+                <div class="flex-1 bg-white/5 rounded-t-lg h-[45%] transition-all hover:bg-primary-container/20"></div>
+            </div>
+        </section>
+        <section class="grid grid-cols-2 gap-gutter">
+            <div class="glass-card rounded-xl p-card-padding flex flex-col justify-between aspect-square">
+                <div class="w-10 h-10 rounded-full bg-primary-container/10 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-primary-container"
+                        data-icon="assignment">assignment</span>
+                </div>
+                <div>
+                    <p class="text-label-caps text-outline uppercase mb-1">Tugas Selesai</p>
+                    <h3 class="text-headline-md font-headline-md text-primary">12/15</h3>
+                </div>
+            </div>
+            <div class="glass-card rounded-xl p-card-padding flex flex-col justify-between aspect-square">
+                <div class="w-10 h-10 rounded-full bg-tertiary-container/10 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-tertiary-container" data-icon="timer">timer</span>
+                </div>
+                <div>
+                    <p class="text-label-caps text-outline uppercase mb-1">Jam Belajar</p>
+                    <h3 class="text-headline-md font-headline-md text-primary">1.8k <span
+                            class="text-body-sm font-normal">m</span></h3>
+                </div>
+            </div>
+            <div class="glass-card rounded-xl p-card-padding flex flex-col justify-between aspect-square">
+                <div class="w-10 h-10 rounded-full bg-secondary-container/10 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-secondary-container" data-icon="target">target</span>
+                </div>
+                <div>
+                    <p class="text-label-caps text-outline uppercase mb-1">Fokus</p>
+                    <h3 class="text-headline-md font-headline-md text-primary">94%</h3>
+                </div>
+            </div>
+            <div class="glass-card rounded-xl p-card-padding flex flex-col justify-between aspect-square">
+                <div class="w-10 h-10 rounded-full bg-on-primary-container/20 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-on-primary-container" data-icon="bedtime">bedtime</span>
+                </div>
+                <div>
+                    <p class="text-label-caps text-outline uppercase mb-1">Istirahat</p>
+                    <h3 class="text-headline-md font-headline-md text-primary">7.6 <span
+                            class="text-body-sm font-normal">j</span></h3>
+                </div>
+            </div>
+        </section>
+    </main>
+    <nav
+        class="fixed bottom-6 left-0 right-0 flex justify-around items-center z-50 mx-auto max-w-md bg-[#1E1E1E]/80 backdrop-blur-2xl fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] rounded-full border border-white/10 px-6 py-3 shadow-2xl shadow-cyan-900/20">
+        <a class="flex flex-col items-center justify-center text-[#00F5FF] drop-shadow-[0_0_8px_rgba(0,245,255,0.6)]"
+            href="#">
+            <span class="material-symbols-outlined" data-icon="dashboard"
+                style="font-variation-settings: 'FILL' 1;">dashboard</span>
+            <span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Home</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-gray-500 hover:text-[#00F5FF]/80" href="#">
+            <span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+            <span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Tasks</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-gray-500 hover:text-[#00F5FF]/80" href="#">
+            <span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+            <span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Schedule</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-gray-500 hover:text-[#00F5FF]/80" href="#">
+            <span class="material-symbols-outlined" data-icon="person">person</span>
+            <span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Profile</span>
+        </a>
+    </nav>
+</body>
+
+</html>
