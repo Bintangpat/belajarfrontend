@@ -1,6 +1,6 @@
 // Rewritten using TypeScript, TailwindCSS, Vite framework rules, and Framer Motion without changing the structure and layout[cite: 5].
 
-import React from 'react';
+
 import { motion } from 'framer-motion';
 
 export default function PaymentSuccessPage() {

@@ -1,6 +1,6 @@
-"use client";
 
-import React, { useEffect, useState, useRef } from "react";
+
+import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import {
   Monitor,
@@ -250,11 +250,10 @@ export default function MilarStudio() {
               <motion.div
                 key={i}
                 variants={fadeUp}
-                className={`border-[1.5px] rounded-[1.5rem] p-8 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_50px_rgba(34,0,255,0.08)] flex flex-col ${
-                  plan.featured
+                className={`border-[1.5px] rounded-[1.5rem] p-8 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_50px_rgba(34,0,255,0.08)] flex flex-col ${plan.featured
                     ? "bg-[#2200FF] text-white border-[#2200FF]"
                     : "border-black/12 hover:border-[#2200FF]"
-                }`}
+                  }`}
               >
                 <p
                   className={`text-[0.72rem] tracking-[0.2em] uppercase mb-2 ${plan.featured ? "opacity-70" : "opacity-60"}`}
